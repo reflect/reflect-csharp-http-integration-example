@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Npgsql;
+using System.Configuration;
 
 namespace Reflect.Integration.API
 {
@@ -10,9 +11,9 @@ namespace Reflect.Integration.API
         {
             var report = new Report();
 
-            var connString = "Host=localhost";
+            var connString = ConfigurationManager.ConnectionStrings["MyConnectionString"];
 
-            var conn = new NpgsqlConnection(connString);
+            var conn = new NpgsqlConnection(connString.ConnectionString);
             conn.Open();
 
             var cmd = new NpgsqlCommand(statement.ToSql(), conn);
