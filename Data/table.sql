@@ -1,0 +1,26 @@
+DROP TABLE IF EXISTS order_data;
+CREATE TABLE order_data (
+  row_id INT,
+  order_id INT,
+  order_date DATE,
+  order_priority VARCHAR(255),
+  order_quantity INT,
+  sales decimal,
+  discount decimal,
+  ship_mode VARCHAR(255),
+  profit decimal,
+  unit_price decimal,
+  shipping_cost decimal,
+  customer_name VARCHAR(255),
+  city VARCHAR(255),
+  zip_code int,
+  state VARCHAR(255),
+  region VARCHAR(255),
+  customer_segment VARCHAR(255),
+  product_category VARCHAR(255),
+  product_sub_category VARCHAR(255),
+  product_name VARCHAR(255),
+  product_container VARCHAR(255),
+  product_base_margin decimal,
+  ship_date DATE
+);
