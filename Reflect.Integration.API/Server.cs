@@ -2,6 +2,7 @@
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.SelfHost;
+using System.Threading;
             
 namespace Reflect.Integration.API
 {
@@ -22,8 +23,7 @@ namespace Reflect.Integration.API
 
 			using (HttpSelfHostServer server = new HttpSelfHostServer(config)) {
                 server.OpenAsync().Wait();
-                Console.Out.WriteLine("Press <ENTER> to stop server.");
-                Console.In.ReadLine();
+                Thread.Sleep(Timeout.Infinite);
             }
         }
     }
